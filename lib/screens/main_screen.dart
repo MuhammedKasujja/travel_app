@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/screens/home.dart';
-import 'package:travel_app/widgets/icon_badge.dart';
+
+import '../widgets/icon_badge.dart';
+
+import 'home.dart';
+import 'login.dart';
+import 'favourites.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -18,7 +22,11 @@ class _MainScreenState extends State<MainScreen> {
         physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: onPageChanged,
-        children: List.generate(3, (index) => Home()),
+        children: [
+          Home(),
+          FavouritePlaces(),
+          LoginPage(),
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
